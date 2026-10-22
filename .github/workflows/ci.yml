@@ -9,3 +9,7 @@ jobs:
         uses: actions/checkout@v4 #imagem, baixa o prjeto, git clone do projeto dentro do workspace la no git
       - name: Cypress run
         uses: cypress-io/github-action@v6 #executa os testes
+        env: #chave secreta do Cypress
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        with:
+          command: npm run test:cloud #executa o comando npm run test:cloud, que está no package.json, que por sua vez executa o cypress run --record, que grava os testes na nuvem do Cypress
