@@ -8,4 +8,4 @@ jobs:
       - name: Checkout 
         uses: actions/checkout@v4 #imagem, baixa o prjeto, git clone do projeto dentro do workspace la no git
       - name: Cypress run
-        uses: cypress-io/github-action@v #executa os testes
+        uses: cypress-io/github-action@v6 #executa os testes
