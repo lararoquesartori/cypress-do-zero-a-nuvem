@@ -1,0 +1,11 @@
+#Esse é o Workflow de Integração Contínua (CI) do projeto. Ele é responsável por executar os testes automatizados do Cypress em cada push para o repositório.
+name: End-to-end tests #nome do workflow
+on: push #sempre que fizer o push ele ocorre
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04 
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v4 #imagem, baixa o prjeto, git clone do projeto dentro do workspace la no git
+      - name: Cypress run
+        uses: cypress-io/github-action@v #executa os testes
